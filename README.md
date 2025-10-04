@@ -1,6 +1,9 @@
 # CNC Profiles
 
+[![Run Python tests](https://github.com/daanlangelaan/cnc-profiles/actions/workflows/tests.yml/badge.svg)](https://github.com/daanlangelaan/cnc-profiles/actions/workflows/tests.yml)
+
 Tools for importing CNC profile cut-lists from Excel and generating machine-ready outputs.
+
 
 ## 🚀 Features
 - Import from Excel (`sample_cutlist.xlsx`)

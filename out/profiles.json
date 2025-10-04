@@ -1,0 +1,573 @@
+[
+  {
+    "name": "Profiel 27",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        428.0,
+        876.0,
+        1324.0,
+        2018.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 34",
+    "ptype": "20x20",
+    "length_mm": 1334.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        684.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 35",
+    "ptype": "20x20",
+    "length_mm": 1334.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        684.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 40",
+    "ptype": "20x40",
+    "length_mm": 370.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "ZIJKANT Y10": [
+        60.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 41",
+    "ptype": "20x40",
+    "length_mm": 370.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "ZIJKANT Y30": [
+        60.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 44",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "ZIJKANT Y10": [
+        428.0,
+        876.0,
+        1324.0
+      ],
+      "ZIJKANT Y30": [
+        428.0,
+        876.0,
+        1324.0,
+        1794.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 45",
+    "ptype": "20x20",
+    "length_mm": 382.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        100.0,
+        120.0,
+        302.0,
+        322.0,
+        352.0,
+        372.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 46",
+    "ptype": "20x20",
+    "length_mm": 382.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        100.0,
+        120.0,
+        302.0,
+        322.0,
+        352.0,
+        372.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 47",
+    "ptype": "20x40",
+    "length_mm": 1280.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        390.0,
+        711.0,
+        997.0
+      ],
+      "ZIJKANT Y10": [
+        390.0,
+        711.0,
+        997.0
+      ],
+      "ZIJKANT Y30": [
+        390.0,
+        711.0,
+        997.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 48",
+    "ptype": "20x40",
+    "length_mm": 1280.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        390.0,
+        711.0,
+        997.0
+      ],
+      "ZIJKANT Y10": [
+        390.0,
+        711.0,
+        997.0
+      ],
+      "ZIJKANT Y30": [
+        390.0,
+        711.0,
+        997.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 49",
+    "ptype": "20x40",
+    "length_mm": 1300.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        10.0,
+        410.0,
+        731.0,
+        1017.0
+      ],
+      "ZIJKANT Y10": [
+        10.0,
+        410.0,
+        731.0,
+        1017.0
+      ],
+      "ZIJKANT Y30": [
+        10.0,
+        410.0,
+        731.0,
+        1017.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 50",
+    "ptype": "20x40",
+    "length_mm": 1300.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        10.0,
+        410.0,
+        731.0,
+        1017.0
+      ],
+      "ZIJKANT Y10": [
+        10.0,
+        410.0,
+        731.0,
+        1017.0
+      ],
+      "ZIJKANT Y30": [
+        10.0,
+        410.0,
+        731.0,
+        1017.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 51",
+    "ptype": "20x20",
+    "length_mm": 342.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        100.0,
+        120.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 52",
+    "ptype": "20x20",
+    "length_mm": 342.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        100.0,
+        120.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 56",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        980.0,
+        1794.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 57",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        980.0,
+        1794.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 58",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        980.0,
+        1794.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 59",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        980.0,
+        1794.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 60",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        980.0,
+        1794.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 61",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        980.0,
+        1794.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 62",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        428.0,
+        1324.0,
+        2018.0
+      ],
+      "ZIJKANT Y10": [
+        428.0,
+        876.0,
+        1324.0
+      ],
+      "ZIJKANT Y30": [
+        428.0,
+        876.0,
+        1324.0,
+        2018.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 63",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "ZIJKANT Y10": [
+        428.0,
+        876.0,
+        1324.0,
+        1794.0
+      ],
+      "ZIJKANT Y30": [
+        428.0,
+        876.0,
+        1324.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 64",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "ZIJKANT Y10": [
+        428.0,
+        876.0,
+        1324.0,
+        1794.0,
+        2240.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 65",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "ZIJKANT Y10": [
+        428.0,
+        876.0,
+        1324.0,
+        1794.0,
+        2240.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 66",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "ZIJKANT Y10": [
+        667.0,
+        876.0,
+        1354.0,
+        1794.0,
+        2001.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 67",
+    "ptype": "20x40",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        876.0
+      ],
+      "ZIJKANT Y10": [
+        428.0,
+        876.0,
+        1324.0,
+        1794.0,
+        2018.0
+      ],
+      "ZIJKANT Y30": [
+        428.0,
+        876.0,
+        1324.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 68",
+    "ptype": "20x40",
+    "length_mm": 440.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        380.0
+      ],
+      "ZIJKANT Y10": [
+        380.0
+      ],
+      "ZIJKANT Y30": [
+        380.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 69",
+    "ptype": "20x40",
+    "length_mm": 440.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        380.0
+      ],
+      "ZIJKANT Y10": [
+        380.0
+      ],
+      "ZIJKANT Y30": [
+        60.0,
+        380.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 70",
+    "ptype": "20x20",
+    "length_mm": 2708.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        10.0,
+        892.0,
+        1814.0,
+        2698.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 71",
+    "ptype": "20x20",
+    "length_mm": 2708.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        10.0,
+        896.0,
+        1814.0,
+        2698.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 72",
+    "ptype": "20x20",
+    "length_mm": 332.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        10.0,
+        322.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 73",
+    "ptype": "20x20",
+    "length_mm": 332.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        10.0,
+        322.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 74",
+    "ptype": "20x40",
+    "length_mm": 1760.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        10.0,
+        1310.0,
+        1700.0
+      ],
+      "ZIJKANT Y10": [
+        10.0,
+        410.0,
+        731.0,
+        1017.0,
+        1310.0,
+        1380.0,
+        1700.0
+      ],
+      "ZIJKANT Y30": [
+        410.0,
+        731.0,
+        1017.0,
+        1310.0,
+        1700.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 75",
+    "ptype": "20x40",
+    "length_mm": 1760.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        10.0,
+        1310.0,
+        1700.0
+      ],
+      "ZIJKANT Y10": [
+        10.0,
+        410.0,
+        731.0,
+        1017.0,
+        1310.0,
+        1700.0
+      ],
+      "ZIJKANT Y30": [
+        410.0,
+        731.0,
+        1017.0,
+        1310.0,
+        1700.0
+      ]
+    }
+  },
+  {
+    "name": "Profiel 76",
+    "ptype": "20x20",
+    "length_mm": 2668.0,
+    "tool_diam": 4.0,
+    "sections": {
+      "BOVENKANT": [
+        667.0,
+        1354.0,
+        2001.0
+      ]
+    }
+  }
+]

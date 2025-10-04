@@ -17,7 +17,7 @@ COL_MAP_CANON = {
     "oriëntatie": "orientatie",
     "lengte_mm": "lengte_mm",
     "lengte": "lengte_mm",
-    "aantal": "aantal",
+    "aantal": "aantal",            # gebruiken we niet meer
     "zijde": "zijde",
     "gaten_x@d_mm": "gaten_x@d_mm",
     "gaten": "gaten_x@d_mm",
@@ -42,82 +42,99 @@ def _clean_cols(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 def _combine_hole_columns(df: pd.DataFrame) -> pd.DataFrame:
-    # bundel alle kolommen met '@' in 'gaten_x@d_mm'
+    """Bundel alle kolommen met '@' in één kolom 'gaten_x@d_mm'."""
     if "gaten_x@d_mm" not in df.columns:
         df["gaten_x@d_mm"] = None
-    hole_cols: List[str] = [c for c in df.columns if c == "gaten_x@d_mm"]
+
+    hole_like: List[str] = ["gaten_x@d_mm"]
     for c in df.columns:
         if c == "gaten_x@d_mm":
             continue
         try:
             if df[c].astype(str).str.contains("@", na=False).any():
-                hole_cols.append(c)
+                hole_like.append(c)
         except Exception:
             continue
 
-    if len(hole_cols) > 1:
+    if len(hole_like) > 1:
         def join_row(row):
             parts = []
-            for c in hole_cols:
+            for c in hole_like:
                 v = row.get(c, None)
                 if pd.notna(v):
                     s = str(v).strip()
-                    if s and s != "nan":
+                    if s and s.lower() != "nan":
                         parts.append(s)
             return " | ".join(parts) if parts else None
 
-        df["gaten_x@d_mm"] = df[hole_cols].apply(join_row, axis=1)
-        df = df.drop(columns=[c for c in hole_cols if c != "gaten_x@d_mm"])
+        df["gaten_x@d_mm"] = df[hole_like].apply(join_row, axis=1)
+        df = df.drop(columns=[c for c in hole_like if c != "gaten_x@d_mm"])
     return df
 
 def load_excel(path: Union[str, Path]) -> pd.DataFrame:
     """
-    Lees jouw Excel (zoals in de screenshots) in en maak 'm analyse-klaar:
     - 1 rij per 'zijde'
-    - forward-fill van profiel_naam / type / oriëntatie / lengte_mm / aantal
-    - zet lengte_mm & aantal naar numeriek
-    - bundel losse gat-kolommen in 'gaten_x@d_mm'
-    - verwijder volledig lege Unnamed-kolommen
+    - forward-fill basisvelden (zonder 'aantal')
+    - 'aantal' wordt verwijderd
+    - 'lengte_mm' naar numeriek
+    - losse gat-kolommen => 'gaten_x@d_mm'
+    - filter: alleen rijen met gaten
     """
     path = Path(path)
     df = pd.read_excel(path, sheet_name=0, dtype=object)
     df = _clean_cols(df)
     df = df.dropna(how="all")
 
-    # vul lege vervolgregels aan met vorige waarden
-    keys = ["profiel_naam", "profiel_type", "orientatie", "lengte_mm", "aantal"]
-    for c in keys:
+    # ffill voor basisvelden
+    for c in ["profiel_naam", "profiel_type", "orientatie", "lengte_mm", "zijde"]:
         if c in df.columns:
-            df[c] = df[c].ffill()
+            s = df[c].ffill()
+            try:
+                df[c] = s.infer_objects(copy=False)
+            except Exception:
+                df[c] = s
 
-    # normaliseer types
+    # types
     if "lengte_mm" in df.columns:
         df["lengte_mm"] = pd.to_numeric(df["lengte_mm"], errors="coerce")
+
+    # verwijder 'aantal'
     if "aantal" in df.columns:
-        df["aantal"] = pd.to_numeric(df["aantal"], errors="coerce")
+        df = df.drop(columns=["aantal"])
 
-    if "zijde" in df.columns:
-        df["zijde"] = df["zijde"].astype(str).str.strip()
-        df.loc[df["zijde"].isin(["", "nan", "None"]), "zijde"] = pd.NA
-
+    # combineer gaten en filter op rijen met gaten
     df = _combine_hole_columns(df)
+    if "gaten_x@d_mm" in df.columns:
+        has_holes = df["gaten_x@d_mm"].notna() & df["gaten_x@d_mm"].astype(str).str.strip().ne("")
+        df = df[has_holes]
 
     # kolomvolgorde
-    canonical = ["profiel_naam","profiel_type","orientatie","lengte_mm","aantal","zijde","gaten_x@d_mm"]
+    canonical = ["profiel_naam", "profiel_type", "orientatie", "lengte_mm", "zijde", "gaten_x@d_mm"]
     ordered = [c for c in canonical if c in df.columns] + [c for c in df.columns if c not in canonical]
     df = df[ordered]
     return df
 
-# === Optioneel: converter naar ProfileSpec (voor gcode e.d.) ===
+# === Profielen bouwen (behoud ZIJKANT Yxx of T-slot A/B) ===
 HOLE_RE = re.compile(r"^\s*(\d+(?:\.\d+)?)\s*@\s*(\d+(?:\.\d+)?)\s*$")
 
 def to_profiles(df: pd.DataFrame) -> list[ProfileSpec]:
     def map_side(z: str) -> str:
-        z = str(z).upper()
-        if z.startswith("BOVENKANT"):
+        u = " ".join(str(z).upper().split())
+        # BOVENKANT
+        if u.startswith("BOVENKANT"):
             return "BOVENKANT"
-        if "ZIJKANT" in z:
+        # ZIJKANT Yxx (Y10, Y30, ...)
+        m = re.search(r"ZIJKANT\s*Y\s*([0-9]+)", u) or re.search(r"ZIJKANT\s*Y([0-9]+)", u)
+        if m:
+            return f"ZIJKANT Y{m.group(1)}"
+        # T-slot varianten (voor compat)
+        if "ZIJKANT" in u and "B" in u:
+            return "ZIJKANT T-slot B"
+        if "ZIJKANT" in u and ("A" in u or "T-SLOT A" in u or "TSLOT A" in u):
             return "ZIJKANT T-slot A"
+        # fallback
+        if "ZIJKANT" in u:
+            return "ZIJKANT Y10"
         return "BOVENKANT"
 
     profs: Dict[str, ProfileSpec] = {}

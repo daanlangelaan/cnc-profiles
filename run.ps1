@@ -1,11 +1,11 @@
 # run.ps1
-# Activeer venv, ga naar projectmap en run CLI
+# Ga naar projectmap, activeer venv, zet src op PYTHONPATH en run de CLI
 
-# Ga naar projectmap
 Set-Location "C:\software builds\cnc app"
-
-# Activeer venv
 . .\.venv\Scripts\Activate.ps1
 
-# Run de CLI met meegegeven parameters
+# Belangrijk: laat Python in 'src' zoeken
+$env:PYTHONPATH = "src"
+
+# Geef alle meegegeven args door aan de CLI
 python .\src\cncapp\cli.py @args
